@@ -79,6 +79,26 @@ body {
   width: 100%;
 }
 
+.board {
+  background-color: #353535;
+  z-index: 1;
+}
+
+.paddleOne {
+  background-color:red;
+  z-index: 0;
+}
+
+.paddleTwo {
+  background-color: red;
+  z-index: 0;
+}
+
+.ball {
+  background-color: white;
+  z-index: 0;
+}
+
 h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem; 
