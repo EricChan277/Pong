@@ -22,18 +22,18 @@ export default class Paddle {
                     break;
             }
         });
-    }//constructor end
+    }   //constructor end
 
         //constructor start 
 
         up() {
-            console.log('Up');
-            this.y = this.y - this.speed;
+            // if (this.paddle > (.max(this.boardHeight)) || this.paddle < (this.min(this.boardHeight)) 
+            
+            this.y = Math.max(0,this.y - this.speed);
         }
 
         down() {
-            console.log('Down');
-            this.y = this.y + this.speed;
+            this.y = Math.min(this.boardHeight - this.height, this.y + this.speed);
         }
 
 
