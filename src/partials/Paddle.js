@@ -1,51 +1,65 @@
-import {SVG_NS} from '../settings';
+import {
+    SVG_NS
+} from '../settings';
 
 export default class Paddle {
-    constructor(boardHeight, width, height, x, y, up, down) {
+    constructor(boardHeight, width, height, x, y, up, down, player) {
         this.boardHeight = boardHeight;
         this.width = width;
         this.height = height;
         this.x = x;
         this.y = y;
-        this.speed = 10;
+        this.speed = 6;
         this.score = 0;
         //   this.color = color;
 
+        // document.addEventListener('keydown', event => {
+
+        //     switch (event.key) {
+        //         case up:
+        //             this.up();
+        //             break;
+        //         case down:
+        //             this.down();
+        //             break;
+        //     }
+        // });
+
+        this.player = player;
+        this.keyState = {};
+
         document.addEventListener('keydown', event => {
-            switch (event.key) {
-                case up:
-                    this.up();
-                    break;
-                case down:
-                    this.down();
-                    break;
-            }
-        });
+            this.keyState[event.key || event.which] = true;
+        }, true);
+
+        document.addEventListener('keyup', event => {
+            this.keyState[event.key || event.which] = false;
+        }, true);
 
 
 
-    }   //constructor end
+    } //constructor end
 
 
-        //constructor start 
+    //constructor start 
 
-        up() {
-            // if (this.paddle > (.max(this.boardHeight)) || this.paddle < (this.min(this.boardHeight)) 
-            
-            this.y = Math.max(0,this.y - this.speed);
-        }
+    up() {
+        // if (this.paddle > (.max(this.boardHeight)) || this.paddle < (this.min(this.boardHeight)) 
 
-        down() {
-            this.y = Math.min(this.boardHeight - this.height, this.y + this.speed);
-        }
+        this.y = Math.max(0, this.y - this.speed);
+    }
 
-        coordinates(x, y, width, height) {
-            let leftX =x;
-            let rightX = x + width;
-            let topY = y;
-            let bottomY = y + height;
-            return [leftX, rightX, topY, bottomY];
-        }
+    down() {
+        this.y = Math.min(this.boardHeight - this.height, this.y + this.speed);
+    }
+
+    coordinates(x, y, width, height) {
+        let leftX = x;
+        let rightX = x + width;
+        let topY = y;
+        let bottomY = y + height;
+        return [leftX, rightX, topY, bottomY];
+    }
 
     //...
     render(svg) {
@@ -57,6 +71,22 @@ export default class Paddle {
         rect.setAttributeNS(null, 'y', this.y);
 
         svg.appendChild(rect);
+
+        // Player movement
+        if (this.keyState['a'] && this.player === 'player1') {
+            this.up();
+        }
+        if (this.keyState['z'] && this.player === 'player1') {
+            this.down();
+        }
+        if (this.keyState['ArrowUp'] && this.player === 'player2') {
+            this.up();
+        }
+        if (this.keyState['ArrowDown'] && this.player === 'player2') {
+            this.down();
+        }
+
+
 
     }
 }
