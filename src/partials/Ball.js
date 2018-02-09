@@ -21,23 +21,32 @@ export default class Ball {
         }
     }
 
+    //declaring the wall collision 
     wallCollision (){
-        const hitLeft =  ;
-        const hitRight = ;
-        const hitTop = ;
-        const hitBottom = ;
+        const hitLeft = this.x - this.radius <= 0;
+        const hitRight = this.x + this.radius >= this.boardWidth;
+        const hitTop = this.y - this.radius <= 0;
+        const hitBottom = this.y + this.radius >= this.boardHeight;
+        
+        
+        if (hitTop || hitBottom) {
+            this. vy = -this.vy
+        } else if (hitLeft || hitRight) {
+            this.vx = -this.vx;
+        }
     }
 
     render(svg) {
         this.x +=this.vx;
         this.y +=this.vy;
 
+        this.wallCollision() ;
+
         let circle = document.createElementNS (SVG_NS, 'circle');
         circle.setAttributeNS(null, 'fill', 'white');
         circle.setAttributeNS(null, 'r', this.radius);
         circle.setAttributeNS(null, 'cx', this.x);
         circle.setAttributeNS(null, 'cy', this.y);
-        // circle.setAttributeNS(null, 'direction', this.direction);
 
         svg.appendChild(circle);
 
