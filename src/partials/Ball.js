@@ -22,6 +22,12 @@ export default class Ball {
         }
     }
 
+    goal(player){
+        player.score++;
+        this.reset();
+        console.log(player.score);
+    }
+
     //declaring the wall collision 
     wallCollision() {
         const hitLeft = this.x - this.radius <= 0;
@@ -33,7 +39,6 @@ export default class Ball {
         if (hitTop || hitBottom) {
             this.vy = -this.vy
         } else if (hitLeft || hitRight) {
-            // this.reset();
             this.vx = -this.vx;
         }
     }
@@ -88,6 +93,19 @@ export default class Ball {
         circle.setAttributeNS(null, 'cy', this.y);
 
         svg.appendChild(circle);
+
+        const rightGoal = this.x + this.radius >= this.boardWidth;
+        const leftGoal = this.x - this.radius <= 0;
+        if (rightGoal) {
+            this.goal(player1);
+            this.direction = -1;
+        } else if (leftGoal) 
+        {
+            this.goal(player2);
+            this.direction = -1;
+        }
+
+        
 
 
 
