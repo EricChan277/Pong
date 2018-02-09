@@ -25,7 +25,7 @@ export default class Ball {
     goal(player){
         player.score++;
         this.reset();
-        console.log(player.score);
+        // console.log(player.score);
     }
 
     //declaring the wall collision 
@@ -102,7 +102,7 @@ export default class Ball {
         } else if (leftGoal) 
         {
             this.goal(player2);
-            this.direction = -1;
+            this.direction = 1;
         }
 
         
