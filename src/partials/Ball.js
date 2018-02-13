@@ -57,10 +57,8 @@ export default class Ball {
             )
             {
                   this.vx = -this.vx;
-                  this.ping.play();
+                //   this.ping.play();
             }
-
-            //sounds go here
         
         } else {
             let paddle = player1.coordinates(player1.x, player1.y, player1.width, player1.height);
@@ -74,10 +72,8 @@ export default class Ball {
               )
               {
                     this.vx = -this.vx;
-                    this.ping.play();
+                    // this.ping.play();
               }
-
-              //sounds go here
         }
       }
 
