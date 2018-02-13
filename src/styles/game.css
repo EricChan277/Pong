@@ -92,18 +92,20 @@ body {
   top: 0;
   bottom: 0;
   animation-name: BGI;
-  animation-duration: 10s;
+  animation-duration: 40s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  background-image: url('/public/images/Scene-1.jpg');
-  z-index: -1; 
-  
+  background: url('/public/images/Scene-1.jpg') 0% 0% repeat;
+  z-index: -1;
+  background-size: 100%;
+
 }
+
 
 
 @keyframes BGI{
   from {
-    transform: translateX(0);
+    transform: translate(0);
   }
   to {
     transform: translate(-550px);
@@ -113,5 +115,6 @@ body {
 h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem; 
-  text-align: center;
+  text-align: center;  
+  color: white;
 }
