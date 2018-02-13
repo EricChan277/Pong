@@ -81,9 +81,8 @@ body {
   height: 100vh;
   justify-content: center;
   width: 100%;
-  
- 
-
+  position: relative;
+  overflow: hidden;
 }
 
 .background {
@@ -97,7 +96,7 @@ body {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   background-image: url('/public/images/Scene-1.jpg');
-  z-index: -1;
+  z-index: -1; 
   
 }
 
