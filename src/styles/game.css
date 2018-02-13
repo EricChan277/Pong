@@ -82,15 +82,23 @@ body {
   justify-content: center;
   width: 100%;
   
-  background-image: url('/public/images/Scene-1.jpg');
+ 
 
 }
 
 .background {
+  position: absolute;
+  left: 0;
+  right: -550px;
+  top: 0;
+  bottom: 0;
   animation-name: BGI;
   animation-duration: 10s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  background-image: url('/public/images/Scene-1.jpg');
+  z-index: -1;
+  
 }
 
 
