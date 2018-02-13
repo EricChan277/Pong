@@ -66,9 +66,13 @@ table {
  * GAME
  */
 
+
+
 html {
   font-size: 16px;
+
 }
+
 
 body {
   align-items: center;
@@ -77,26 +81,26 @@ body {
   height: 100vh;
   justify-content: center;
   width: 100%;
+  
+  background-image: url('/public/images/Scene-1.jpg');
+
 }
 
-.board {
-  background-color: #353535;
-  z-index: 1;
+.background {
+  animation-name: BGI;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
-.paddleOne {
-  background-color:red;
-  z-index: 0;
-}
 
-.paddleTwo {
-  background-color: red;
-  z-index: 0;
-}
-
-.ball {
-  background-color: white;
-  z-index: 0;
+@keyframes BGI{
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translate(-550px);
+  }
 }
 
 h1 {

@@ -7,12 +7,11 @@ export default class Board {
     }
     render(svg) {
         let rect = document.createElementNS(SVG_NS, 'rect');
-        rect.setAttributeNS(null, 'fill', '#353535');
+        rect.setAttributeNS(null, 'fill', 'none');
+        rect.setAttributeNS(null, 'stroke','white');
         rect.setAttributeNS(null, 'width', this.width);
         rect.setAttributeNS(null, 'height', this.height);
         rect.setAttributeNS(null, 'viewBox', `0 0 ${this.width} ${this.height}`);
-        
-        
         let line = document.createElementNS(SVG_NS, 'line');
         line.setAttributeNS(null, 'x1', (this.width/2));
         line.setAttributeNS(null, 'y1', '0');

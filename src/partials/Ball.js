@@ -26,7 +26,6 @@ export default class Ball {
     goal(player){
         player.score++;
         this.reset();
-        // console.log(player.score);
     }
 
     //declaring the wall collision 
@@ -57,7 +56,7 @@ export default class Ball {
             )
             {
                   this.vx = -this.vx;
-                //   this.ping.play();
+                  this.ping.play();
             }
         
         } else {
@@ -72,7 +71,7 @@ export default class Ball {
               )
               {
                     this.vx = -this.vx;
-                    // this.ping.play();
+                    this.ping.play();
               }
         }
       }
