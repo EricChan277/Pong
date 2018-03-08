@@ -15,11 +15,11 @@ export default class Game {
 		// Other code goes here...
 		this.board = new Board(this.width, this.height);
 		this.ball = new Ball (8, this.width, this.height);
-		this.BGM1 = new Audio ('/./public/sounds/Juhani Junkala [Retro Game Music Pack] Level 1.wav')
-		this.BGM2 = new Audio ('/./public/sounds/Juhani Junkala [Retro Game Music Pack] Level 2.wav')
-		this.BGM3 = new Audio ('/./public/sounds/Juhani Junkala [Retro Game Music Pack] Level 3.wav')
-		this.BGM4 = new Audio ('/./public/sounds/Juhani Junkala [Retro Game Music Pack] Ending.wav')
-		this.winState = new Audio ('/./public/sounds/Juhani Junkala [Retro Game Music Pack] Title Screen.wav')
+		this.BGM1 = new Audio ('../public/sounds/Juhani Junkala [Retro Game Music Pack] Level 1.wav')
+		this.BGM2 = new Audio ('../public/sounds/Juhani Junkala [Retro Game Music Pack] Level 2.wav')
+		this.BGM3 = new Audio ('../public/sounds/Juhani Junkala [Retro Game Music Pack] Level 3.wav')
+		this.BGM4 = new Audio ('../public/sounds/Juhani Junkala [Retro Game Music Pack] Ending.wav')
+		this.winState = new Audio ('../public/sounds/Juhani Junkala [Retro Game Music Pack] Title Screen.wav')
 
 		
 		this.paddleWidth = 8;
