@@ -95,7 +95,7 @@ body {
   animation-duration: 40s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  background: url('https://github.com/EricChan277/Pong/blob/master/public/images/Scene-1.jpg') 0% 0% repeat;
+  background: url('/public/images/Scene-1.jpg') 0% 0% repeat;
   z-index: -1;
   background-size: 100%;
 
